@@ -24,6 +24,7 @@
     <a href='https://fudan-generative-vision.github.io/hallo/#/'><img src='https://img.shields.io/badge/Project-HomePage-Green'></a>
     <a href='https://arxiv.org/pdf/2406.08801'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
     <a href='https://huggingface.co/fudan-generative-ai/hallo'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Model-yellow'></a>
+    <a href='https://huggingface.co/fudan-generative-ai/hallo'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Demo-yellow'></a>
     <a href='https://www.modelscope.cn/models/fudan-generative-vision/Hallo/summary'><img src='https://img.shields.io/badge/Modelscope-Model-purple'></a>
     <a href='assets/wechat.jpeg'><img src='https://badges.aleen42.com/src/wechat.svg'></a>
 </div>
@@ -33,7 +34,7 @@
 ## 📸 Showcase
 
 
-https://github.com/fudan-generative-vision/hallo/assets/17402682/294e78ef-c60d-4c32-8e3c-7f8d6934c6bd
+https://github.com/fudan-generative-vision/hallo/assets/17402682/9d1a0de4-3470-4d38-9e4f-412f517f834c
 
 ### 🎬 Honoring Classic Films
 
@@ -64,6 +65,8 @@ Explore [more examples](https://fudan-generative-vision.github.io/hallo).
 
 ## 📰 News
 
+- **`2024/06/21`**: 🚀🚀🚀 Cloned a Gradio demo on [🤗Huggingface space](https://huggingface.co/spaces/fudan-generative-ai/hallo).
+- **`2024/06/20`**: 🌟🌟🌟 Received numerous contributions from the community, including a [Windows version](https://github.com/sdbds/hallo-for-windows), [ComfyUI](https://github.com/AIFSH/ComfyUI-Hallo), [WebUI](https://github.com/fudan-generative-vision/hallo/pull/51), and [Docker template](https://github.com/ashleykleynhans/hallo-docker).
 - **`2024/06/15`**: ✨✨✨ Released some images and audios for inference testing on [🤗Huggingface](https://huggingface.co/datasets/fudan-generative-ai/hallo_inference_samples).
 - **`2024/06/15`**: 🎉🎉🎉 Launched the first version on 🫡[GitHub](https://github.com/fudan-generative-vision/hallo).
 
@@ -75,6 +78,8 @@ Explore the resources developed by our community to enhance your experience with
 - [hallo-webui](https://github.com/daswer123/hallo-webui) - Explore the WebUI created by [@daswer123](https://github.com/daswer123).
 - [hallo-for-windows](https://github.com/sdbds/hallo-for-windows) - Utilize Hallo on Windows with the guide by [@sdbds](https://github.com/sdbds).
 - [ComfyUI-Hallo](https://github.com/AIFSH/ComfyUI-Hallo) - Integrate Hallo with the ComfyUI tool by [@AIFSH](https://github.com/AIFSH).
+- [hallo-docker](https://github.com/ashleykleynhans/hallo-docker) - Docker image for Hallo by [@ashleykleynhans](https://github.com/ashleykleynhans).
+- [RunPod Template](https://runpod.io/console/deploy?template=aeyibwyvzy&ref=2xxro4syy) - Deploy Hallo to RunPod by [@ashleykleynhans](https://github.com/ashleykleynhans).
 
 Thanks to all of them.
 
@@ -144,6 +149,9 @@ Finally, these pretrained models should be organized as follows:
 ```text
 ./pretrained_models/
 |-- audio_separator/
+|   |-- download_checks.json
+|   |-- mdx_model_data.json
+|   |-- vr_model_data.json
 |   `-- Kim_Vocal_2.onnx
 |-- face_analysis/
 |   `-- models/
@@ -159,22 +167,18 @@ Finally, these pretrained models should be organized as follows:
 |   |-- config.json
 |   `-- diffusion_pytorch_model.safetensors
 |-- stable-diffusion-v1-5/
-|   |-- feature_extractor/
-|   |   `-- preprocessor_config.json
-|   |-- model_index.json
-|   |-- unet/
-|   |   |-- config.json
-|   |   `-- diffusion_pytorch_model.safetensors
-|   `-- v1-inference.yaml
+|   `-- unet/
+|       |-- config.json
+|       `-- diffusion_pytorch_model.safetensors
 `-- wav2vec/
-    |-- wav2vec2-base-960h/
-    |   |-- config.json
-    |   |-- feature_extractor_config.json
-    |   |-- model.safetensors
-    |   |-- preprocessor_config.json
-    |   |-- special_tokens_map.json
-    |   |-- tokenizer_config.json
-    |   `-- vocab.json
+    `-- wav2vec2-base-960h/
+        |-- config.json
+        |-- feature_extractor_config.json
+        |-- model.safetensors
+        |-- preprocessor_config.json
+        |-- special_tokens_map.json
+        |-- tokenizer_config.json
+        `-- vocab.json
 ```
 
 ### 🛠️ Prepare Inference Data
@@ -235,7 +239,6 @@ options:
 | :----: | :---------------------------------------------------------------------------------------------------- | :--------: |
 |   ✅   | **[Inference source code meet everyone on GitHub](https://github.com/fudan-generative-vision/hallo)** | 2024-06-15 |
 |   ✅   | **[Pretrained models on Huggingface](https://huggingface.co/fudan-generative-ai/hallo)**              | 2024-06-15 |
-| 🚧 | **[Optimizing Inference Performance]()**                                                | 2024-06-23 |
 | 🚧 | **[Optimizing Performance on images with a resolution of 256x256.]()**                                                | 2024-06-23 |
 | 🚀 | **[Improving the model's performance on Mandarin Chinese]()**                                                    |    2024-06-25     |
 | 🚀 | **[Releasing data preparation and training scripts]()**                                                | 2024-06-28 |
@@ -243,10 +246,10 @@ options:
 <details>
 <summary>Other Enhancements</summary>
 
-- [ ] Enhancement: Test and ensure compatibility with Windows operating system. [#39](https://github.com/fudan-generative-vision/hallo/issues/39)
-- [ ] Bug: Output video may lose several frames. [#41](https://github.com/fudan-generative-vision/hallo/issues/41)
+- [x] Enhancement: Test and ensure compatibility with Windows operating system. [#39](https://github.com/fudan-generative-vision/hallo/issues/39)
+- [x] Bug: Output video may lose several frames. [#41](https://github.com/fudan-generative-vision/hallo/issues/41)
 - [ ] Bug: Sound volume affecting inference results (audio normalization).
-- [ ] Enhancement: Inference code logic optimization.
+- [ ] ~~Enhancement: Inference code logic optimization~~. This solution doesn't show significant performance improvements. Trying other approaches.
 - [ ] Enhancement: Enhancing performance on low resolutions(256x256) to support more efficient usage.
 
 </details>
